@@ -1,3 +1,3 @@
 # etch-a-sketch
 
-Not yet FINISHED
+Basic Etch-a-sketch project
