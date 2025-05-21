@@ -1,9 +1,18 @@
-.btn {
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.heading {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
   margin: 10px 0;
 }
-.btn button {
+.heading button {
   background-color: black;
   color: white;
   border: none;
