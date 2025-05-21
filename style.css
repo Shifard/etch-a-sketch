@@ -16,7 +16,15 @@ body {
   background-color: black;
   color: white;
   border: none;
-  padding: 10px 24px;
+  height: 40px;
+  width: 150px;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s all;
+}
+
+.heading button:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
 }
