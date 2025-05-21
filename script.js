@@ -1,25 +1,40 @@
 const container = document.querySelector('#container');
-container.style.cssText = "width:960px; height:960px; border: 1px solid black; display: flex; flex-wrap: wrap; margin: auto;"
+container.style.cssText = `width:960px; height:960px; 
+                          border: 1px solid black; display: flex; 
+                          flex-wrap: wrap; margin: auto;`
 let count = 16;
 let size = 960;
-const button = document.querySelector('button');
+const gridBtn = document.querySelector('#grid-change');
+let bgColor = `black`;
 
-button.addEventListener('click', ()=> {
-  count = Number(prompt('Enter a grid: (max 100)', ''));
+gridBtn.addEventListener('click', ()=> {
+  count = +(prompt('Enter a grid: (max 100)', 0));
+  if (count > 100 || !Number.isInteger(count)) {
+    alert('ERROR');
+  } else {
   container.textContent = '';
-  grid(count)
+  changeGrid(count)
+  }
+});
+
+const color = document.querySelector('#color');
+const colorBtn = document.querySelector('#color-change');
+
+colorBtn.addEventListener('click', () => {
+  bgColor = color.value;
 })
 
 
-function grid(count) {
-for(let i = 0; i < count*count; i++){
+function changeGrid(count) {
+for(let i = 0; i < count**2; i++){
   let divs = document.createElement('div');
-  divs.style.cssText = `border: 1px solid black; width: ${size/count - 2}px; height: ${size/count -2}px;`
+  divs.style.cssText = `border: 1px solid black; 
+  width: ${size/count - 2}px; height: ${size/count -2}px;`
   container.appendChild(divs);
   divs.addEventListener('mouseover', ()=> {
-    divs.style.background = 'black';
+    divs.style.background = `${bgColor}`;
   })
 }
 }
-grid(count)
+changeGrid(count);
 
