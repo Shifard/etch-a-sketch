@@ -8,8 +8,8 @@ const gridBtn = document.querySelector('#grid-change');
 let bgColor = `black`;
 
 gridBtn.addEventListener('click', ()=> {
-  count = +(prompt('Enter a grid: (max 100)', 0));
-  if (count > 100 || !Number.isInteger(count)) {
+  count = +(prompt('Enter a grid: (max 100)'));
+  if (count > 100 || count < 0 || !Number.isInteger(count)) {
     alert('ERROR');
   } else {
   container.textContent = '';
@@ -21,6 +21,7 @@ const color = document.querySelector('#color');
 const colorBtn = document.querySelector('#color-change');
 
 colorBtn.addEventListener('click', () => {
+  alert('Color Changed!')
   bgColor = color.value;
 })
 
